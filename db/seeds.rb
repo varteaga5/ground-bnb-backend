@@ -5,12 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts 'deleting all seeds'
+puts '❌ deleting all seeds...'
 User.destroy_all
 
-puts 'creating seeds'
+puts '🥋 Seeding users...'
 
 User.create(name:'dianna',email:'dianna@dianna.com')
 User.create(name:'timmy',email:'timmy@timmy.com')
+Property.create(address:'123 joy lane', price: 350, user_id:User.first.id)
+Property.create(address:'55 wall st', price: 500, user_id:User.first.id)
 
-puts 'seeding done'
+puts '✅ seeding done!'
