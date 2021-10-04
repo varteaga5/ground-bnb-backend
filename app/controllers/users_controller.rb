@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         user = User.find_by(id: params[:id])
         # checks if user exits
         if user
-            render json: user
+            render json: user, include: :properties
         else
             render json: {message: 'invalid user id'}
         end
